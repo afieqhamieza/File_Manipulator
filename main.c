@@ -13,14 +13,17 @@
 void createFile(const char* filename);
 void deleteFile(const char* filename);
 void copyFile(const char* source_file, const char* target_file);
+void createHelp(void);
+void deleteHelp(void);
+void copyHelp(void);
 
 int main(int argc, const char * argv[])
 {
-    if (strcmp(argv[1], "create" ) == 0) 
+    if (strcmp(argv[1], "create" ) == 0)
         createFile(argv[2]);
-    else if (strcmp(argv[1], "delete" ) == 0) 
+    else if (strcmp(argv[1], "delete" ) == 0)
         deleteFile(argv[2]);
-    else if (strcmp(argv[1], "copy" ) == 0) 
+    else if (strcmp(argv[1], "copy" ) == 0)
         copyFile(argv[2], argv[3]);
     
     return 0;
@@ -30,7 +33,6 @@ void createFile(const char* filename)
 {
     FILE *fp;
     fp = fopen(filename, "a+");
-    
     printf("File created successfully.\n");
 }
 
@@ -38,9 +40,9 @@ void deleteFile(const char* filename)
 {
     int ret = remove(filename);
     
-    if(ret == 0) 
+    if(ret == 0)
         printf("File deleted successfully.\n");
-    else 
+    else
         printf("Error: unable to delete the file");
 }
 
@@ -73,6 +75,21 @@ void copyFile(const char* source_file, const char* target_file)
     
     fclose(source);
     fclose(target);
+}
+
+void createHelp()
+{
+    puts("create accepts the name of the file that you want to create");
+}
+
+void deleteHelp()
+{
+    puts("delete accepts the name of the file you want to delete");
+}
+
+void copyHelp()
+{
+    puts("copy accepts the name of the file you want to copy from and the name of file you are copying into");
 }
 
 
