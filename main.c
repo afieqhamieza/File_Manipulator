@@ -13,9 +13,6 @@
 void createFile(const char* filename);
 void deleteFile(const char* filename);
 void copyFile(const char* source_file, const char* target_file);
-void createHelp(void);
-void deleteHelp(void);
-void copyHelp(void);
 
 int main(int argc, const char * argv[])
 {
@@ -76,20 +73,3 @@ void copyFile(const char* source_file, const char* target_file)
     fclose(source);
     fclose(target);
 }
-
-void createHelp()
-{
-    puts("create accepts the name of the file that you want to create");
-}
-
-void deleteHelp()
-{
-    puts("delete accepts the name of the file you want to delete");
-}
-
-void copyHelp()
-{
-    puts("copy accepts the name of the file you want to copy from and the name of file you are copying into");
-}
-
-
